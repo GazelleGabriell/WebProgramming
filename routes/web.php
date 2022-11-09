@@ -18,5 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/gamelist', [GameController::class, 'index'])->name('home');
+Route::get('/gamelist/home', [GameController::class, 'index'])->name('home');
+Route::get('/gamelist/add', [GameController::class, 'addgame'])->name('add');
+Route::post('/gamelist/add', [GameController::class, 'addgamelogic'])->name('addlogic');
 
